@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="dashboard">
+
+<h1>Welcome {{username}} 👋</h1>
+
+<!-- QUICK ACTIONS -->
+
+<div class="quick-actions">
+
+<a href="/upload" class="action-card">📄 Upload Resume</a>
+
+<a href="/analyze" class="action-card">🔍 Analyze Resume</a>
+
+<a href="/jobs" class="action-card">💼 Recommended Jobs</a>
+
+</div>
+
+
+<!-- STATUS GRID -->
+
+<div class="dashboard-grid">
+
+<!-- RESUME STATUS -->
+
+<div class="dashboard-card">
+
+<h3>Resume Status</h3>
+
+{% if resume %}
+
+<p class="status-ok">✔ Resume Uploaded</p>
+
+{% else %}
+
+<p class="status-warning">No Resume Uploaded</p>
+
+{% endif %}
+
+</div>
+
+
+<!-- ATS SCORE -->
+
+<div class="dashboard-card">
+
+<h3>ATS Score</h3>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width: {{ ats_score or 0 }}%;">
+
+{{ ats_score or 0 }}%
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<div class="dashboard-card">
+
+<h3>Your Skills</h3>
+
+<div class="skills-container">
+
+{% for s in skills %}
+
+<span class="skill-badge">{{s}}</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+
+<!-- JOB PREVIEW -->
+
+<div class="dashboard-card">
+
+<h3>Recommended Jobs</h3>
+
+{% for job in jobs %}
+
+<div class="job-preview">
+
+<p>{{job.role}}</p>
+
+<a href="{{job.link}}" target="_blank">
+
+<button class="btn-small">Apply</button>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+<a href="/jobs" class="view-more">View All Jobs →</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

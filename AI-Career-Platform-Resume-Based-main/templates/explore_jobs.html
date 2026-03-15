@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jobs-container">
+
+<h1>Explore Jobs</h1>
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+<h3>{{job.role}}</h3>
+
+<p>Match Score: {{job.score}}%</p>
+
+<a href="{{job.link}}" target="_blank">
+<button class="btn">Apply via LinkedIn</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

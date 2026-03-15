@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="analyzer-container">
+
+<h1 class="page-title">Resume Analysis</h1>
+
+<!-- ATS SCORE CARD -->
+
+<div class="ats-card">
+
+<h2>ATS Score</h2>
+
+<div class="ats-score">
+{{score}}%
+</div>
+
+</div>
+
+
+<!-- GRID SECTION -->
+
+<div class="analysis-grid">
+
+<!-- DOMAIN CARD -->
+
+<div class="analysis-card">
+
+<h3>Detected Domain</h3>
+
+<p class="domain">{{domain}}</p>
+
+</div>
+
+
+<!-- SKILLS CARD -->
+
+<div class="analysis-card">
+
+<h3>Extracted Skills</h3>
+
+<div class="skills-container">
+
+{% for s in skills %}
+
+<span class="skill-badge">{{s}}</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+
+<!-- MISSING SKILLS CARD -->
+
+<div class="analysis-card">
+
+<h3>Suggested Skills</h3>
+
+<div class="skills-container">
+
+{% for s in missing %}
+
+<span class="missing-badge">{{s}}</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+
+<!-- SUGGESTIONS CARD -->
+
+<div class="analysis-card">
+
+<h3>Resume Improvement Suggestions</h3>
+
+<ul class="suggestion-list">
+
+{% for s in suggestions %}
+
+<li>{{s}}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
