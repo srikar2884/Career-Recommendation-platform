@@ -262,11 +262,11 @@ Possible improvements:
 
 # Author
 
-**Vignesh Manku**
+**SRIKAR YADAV POTTELU**
 Computer Science and Engineering Student
 
 GitHub
-[https://github.com/Manku-Vignesh](https://github.com/Manku-Vignesh)
+[https://github.com/srikar2884](https://github.com/srikar2884)
 
 ---
 
